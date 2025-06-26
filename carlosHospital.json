@@ -1,0 +1,68 @@
+{
+	"name": "obtener_contenido",
+	"description": "Obtiene el contenido teniendo en cuenta el valor del parámetro conocer",
+	"parameters": {
+		"type": "object",
+		"properties": {
+			"conocer": {
+				"type": "string",
+				"description": "Es una palabra que sirve como argumento para seleccionar el contenido"
+			}
+		},
+		"required": [
+			"conocer"
+		]
+	}
+}
+
+---
+
+{
+  "name": "traerAgendaHospital",
+  "description": "Consulta los próximos horarios disponibles para agendar una cita con base en la empresa del usuario.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}
+
+---
+
+{
+  "name": "reservarCita",
+  "description": "Reserva una cita para un paciente registrando su nombre, documento, EPS, fecha, hora y número de celular. Verifica que el celular sea válido y esté registrado.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "nombre": {
+        "type": "string",
+        "description": "Nombre completo del paciente"
+      },
+      "documento": {
+        "type": "string",
+        "description": "Número de documento de identidad del paciente"
+      },
+      "eps": {
+        "type": "string",
+        "description": "Nombre de la EPS o entidad de salud a la que pertenece el paciente"
+      },
+      "fecha": {
+        "type": "string",
+        "description": "Fecha de la cita en formato YYYY-MM-DD"
+      },
+      "hora": {
+        "type": "string",
+        "description": "Hora de la cita en formato HH:MM"
+      },
+      "celular": {
+        "type": "string",
+        "description": "Número de celular del paciente, incluyendo el prefijo del país (ej. 573001112233)"
+      }
+    },
+    "required": ["nombre", "documento", "eps", "fecha", "hora", "celular"]
+  }
+}
+
+---
+
